@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feliz dia dos namorados</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>anna clara</strong>
+                        <p>
+                          seu sorriso lindo, sua risada gostosa e seus olhos apaixonantes são uns dos motivos por eu te amar tanto cada dia mais. 
+                          você tem um papel tão especial na minha vida que não consigo expressar em palavras minha gratidão por ter te conhecido
+                          e muito menos o quão agradecida eu sou por nós. feliz dia dos namorados, minha namorada, eu te amo pra sempre. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div>
+    </div>
+    <script>
+        const envelope = document.querySelector('.envelope-wrapper');
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+        });
+    </script>
+</body>
+</html>
