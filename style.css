@@ -36,9 +36,9 @@ body{
   position: absolute;
   top: 0;
   z-index: 2;
-  border-top: 130px solid var(--envelope-tab);
-  border-right: 150px solid transparent;
-  border-left: 150px solid transparent;
+  border-top: 180px solid var(--envelope-tab);
+  border-right: 170px solid transparent;
+  border-left: 180px solid transparent;
   transform-origin: top;
   transition: all 0.5s ease-in-out 0.7s;
 }
