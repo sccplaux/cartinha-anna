@@ -90,13 +90,11 @@ body {
   width: 20px;
   height: 20px;
   background: var(--heart-color);
-  z-index: 4;
   transform: translate(-50%, -50%) rotate(45deg);
-  transition: transform 0.5s ease-in-out 1s;
-  box-shadow: 0 1px 6px var(--shadow-color);
   cursor: pointer;
-
-  /* ESSENCIAL: sem border-radius aqui! */
+  z-index: 4;
+  box-shadow: 0 1px 6px var(--shadow-color);
+  /* ⚠️ NÃO usar border-radius aqui! */
 }
 
 .heart::before,
@@ -118,7 +116,6 @@ body {
   top: 0;
   left: 10px;
 }
-
 
 .flap > .envelope::before {
   transform: rotateX(180deg);
