@@ -1,4 +1,4 @@
-:root{
+:root {
   --primary: #fff;
   --bg-color: rgb(5, 53, 61);
   --bg-envelope-color: #f5edd1;
@@ -8,7 +8,8 @@
   --txt-color: #444;
   --heart-color: rgb(252, 8, 231);
 }
-body{
+
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -17,15 +18,19 @@ body{
   align-items: center;
   justify-content: center;
 }
+
 .container {
   height: 100vh;
   display: grid;
   place-items: center;
 }
+
 .container > .envelope-wrapper {
   background: var(--bg-envelope-color);
   box-shadow: 0 0 40px var(--shadow-color);
+  position: relative;
 }
+
 .envelope-wrapper > .envelope {
   position: relative;
   width: 400px;
@@ -58,15 +63,17 @@ body{
 
 .envelope > .letter {
   position: absolute;
-  right: 15%;
+  left: 50%;
   bottom: 0;
-  width: 70%;
-  height: 85%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 80%;
   background: var(--primary);
   text-align: center;
   transition: all 1s ease-in-out;
   box-shadow: 0 0 5px var(--shadow-color);
   padding: 20px 10px;
+  z-index: 1;
 }
 
 .envelope > .letter > .text {
@@ -80,39 +87,48 @@ body{
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
   background: var(--heart-color);
   z-index: 4;
   transform: translate(-50%, -20%) rotate(45deg);
   transition: transform 0.5s ease-in-out 1s;
   box-shadow: 0 1px 6px var(--shadow-color);
   cursor: pointer;
+  border-radius: 50% 50% 0 0;
 }
-.heart {
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
   width: 20px;
   height: 20px;
+  background: var(--heart-color);
+  border-radius: 50%;
 }
-.heart:before, 
-.heart:after {
-  width: 20px;
-  height: 20px;
-}
-.heart:after {
-  right: 10px;
-}
-.heart:before {
+
+.heart::before {
   top: -10px;
+  left: 0;
 }
-.flap > .envelope:before {
+
+.heart::after {
+  top: 0;
+  left: 10px;
+}
+
+.flap > .envelope::before {
   transform: rotateX(180deg);
   z-index: 0;
 }
+
 .flap > .envelope > .letter {
   bottom: 100px;
-  transform: scale(1.5);
+  transform: translateX(-50%) scale(1.5);
   transition-delay: 1s;
 }
+
 .flap > .heart {
   transform: rotate(90deg);
   transition-delay: 0.4s;
