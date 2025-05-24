@@ -3,27 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>feliz dia dos namorados</title>
+  <title>Feliz Dia dos Namorados</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="player-spotify">
-  <iframe 
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/43BCxznTSBLcXzu4lJ8KW5?utm_source=generator"  width="300" 
-    height="80" 
-    frameborder="0" 
-    allowtransparency="true" 
-    allow="encrypted-media"
-    style="border-radius: 12px; margin: 10px 0;></iframe>
-</div>
+  <div class="player-container">
+    <div class="player-spotify">
+      <iframe 
+        src="https://open.spotify.com/embed/track/43BCxznTSBLcXzu4lJ8KW5?utm_source=generator" 
+        width="300" 
+        height="80" 
+        frameborder="0" 
+        allowtransparency="true" 
+        allow="encrypted-media"
+        style="border-radius: 12px; margin: 10px auto;">
+      </iframe>
+    </div>
+  </div>
+
   <div class="container">
     <div class="envelope-wrapper">
       <div class="envelope">
         <div class="letter">
           <div class="text">
-            <strong>anna clara</strong>
+            <strong>Anna Clara</strong>
             <p>
-seu sorriso lindo, sua risada gostosa e seus olhos apaixonantes são uns dos motivos por eu te amar tanto cada dia mais. você tem um papel tão especial na minha vida que não consigo expressar em palavras minha gratidão por ter te conhecido, e muito menos o quão agradecida eu sou por nós. feliz dia dos namorados, eu te amo pra sempre.
+              Seu sorriso lindo, sua risada gostosa e seus olhos apaixonantes são uns dos motivos por eu te amar tanto cada dia mais. Você tem um papel tão especial na minha vida que não consigo expressar em palavras minha gratidão por ter te conhecido, e muito menos o quão agradecida eu sou por nós. Feliz dia dos namorados, eu te amo pra sempre.
             </p>
           </div>
         </div>
@@ -31,6 +36,7 @@ seu sorriso lindo, sua risada gostosa e seus olhos apaixonantes são uns dos mot
       <div class="heart"></div>
     </div>
   </div>
+
   <script>
     const envelope = document.querySelector('.envelope-wrapper');
     envelope.addEventListener('click', () => {
