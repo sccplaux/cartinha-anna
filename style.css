@@ -8,17 +8,72 @@
   --txt-color: #444;
   --heart-color: rgb(135,63,69);
 }
-.contador {
+
+/* Estilos do contador romântico */
+.contador-romantico {
+  background: rgba(255, 182, 193, 0.2);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 40px auto;
+  max-width: 600px;
   text-align: center;
-  margin: 20px 0;
-  color: #fff;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 14px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.contador strong {
-  color: #ffb6c1; /* Cor rosa para combinar com o tema */
+.relogio {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
 }
+
+.tempo-box {
+  background: rgba(135, 63, 69, 0.8);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  min-width: 70px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.tempo-box:hover {
+  transform: translateY(-5px);
+}
+
+.tempo-box span {
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+}
+
+.tempo-box small {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.mensagem-contador {
+  color: #fff;
+  font-style: italic;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Animação de pulsação */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.contador-romantico {
+  animation: pulse 3s infinite;
+}
+
 body {
   margin: 0;
   padding: 0;
