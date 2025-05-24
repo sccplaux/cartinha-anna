@@ -1,12 +1,12 @@
 :root {
   --primary: #fff;
-  --bg-color: rgba(75,39,25,255);
+  --bg-color: rgba(75, 39, 25, 1);
   --bg-envelope-color: #875a47;
   --envelope-tab: #c98c77;
   --envelope-cover: #c0836e;
   --shadow-color: rgba(0, 0, 0, 0.2);
   --txt-color: #444;
-  --heart-color: rgb(135,63,69);
+  --heart-color: rgb(135, 63, 69);
 }
 
 body {
@@ -27,7 +27,7 @@ body {
   padding: 20px 0;
 }
 
-.player-spotify iframe {
+.player-container iframe {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   margin: 0 auto;
@@ -46,9 +46,108 @@ body {
   margin-top: 30px;
 }
 
-/* ... (estilos do envelope e carta permanecem iguais) ... */
+.envelope-wrapper > .envelope {
+  position: relative;
+  width: 400px;
+  height: 300px;
+}
 
-/* CONTADOR EXTERNO */
+.envelope-wrapper > .envelope::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  border-top: 180px solid var(--envelope-tab);
+  border-right: 200px solid transparent;
+  border-left: 200px solid transparent;
+  transform-origin: top;
+  transition: all 0.5s ease-in-out 0.7s;
+}
+
+.envelope-wrapper > .envelope::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 0px;
+  height: 0px;
+  border-top: 180px solid transparent;
+  border-right: 200px solid var(--envelope-cover);
+  border-bottom: 120px solid var(--envelope-cover);
+  border-left: 200px solid var(--envelope-cover);
+}
+
+.envelope > .letter {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 80%;
+  background: var(--primary);
+  text-align: center;
+  transition: all 1s ease-in-out;
+  box-shadow: 0 0 5px var(--shadow-color);
+  padding: 20px 10px;
+  z-index: 1;
+}
+
+.envelope > .letter > .text {
+  font-family: "Times New Roman", Times, serif;
+  color: var(--txt-color);
+  text-align: center;
+  font-size: 14px;
+}
+
+.heart {
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: var(--heart-color);
+  transform: translate(-50%, -50%) rotate(45deg);
+  cursor: pointer;
+  z-index: 4;
+  box-shadow: 0 1px 6px var(--shadow-color);
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--heart-color);
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -12px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: -12px;
+}
+
+.flap > .envelope::before {
+  transform: rotateX(180deg);
+  z-index: 0;
+}
+
+.flap > .envelope > .letter {
+  bottom: 100px;
+  transform: translateX(-50%) scale(1.1);
+  transition-delay: 1s;
+}
+
+.flap > .heart {
+  transform: rotate(90deg);
+  transition-delay: 0.4s;
+}
+
+/* Contador Externo */
 .contador-externo {
   width: 100%;
   max-width: 500px;
