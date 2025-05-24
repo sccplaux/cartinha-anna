@@ -124,10 +124,9 @@ body {
 
 .flap > .envelope > .letter {
   bottom: 100px;
-  transform: translateX(-60%) scale(1.1); /* ou scale(1) para manter tamanho */
+  transform: translateX(-50%) scale(1.1); /* ou scale(1) para manter tamanho */
   transition-delay: 1s;
 }
-
 
 .flap > .heart {
   transform: rotate(90deg);
