@@ -30,6 +30,33 @@
             <p>
               Seu sorriso lindo, sua risada gostosa e seus olhos apaixonantes são uns dos motivos por eu te amar tanto cada dia mais. Você tem um papel tão especial na minha vida que não consigo expressar em palavras minha gratidão por ter te conhecido, e muito menos o quão agradecida eu sou por nós. Feliz dia dos namorados, eu te amo pra sempre.
             </p>
+            
+            <!-- Contador dentro da carta -->
+            <div class="contador-romantico">
+              <div class="relogio">
+                <div class="tempo-box">
+                  <span id="anos">00</span>
+                  <small>Anos</small>
+                </div>
+                <div class="tempo-box">
+                  <span id="meses">00</span>
+                  <small>Meses</small>
+                </div>
+                <div class="tempo-box">
+                  <span id="dias">00</span>
+                  <small>Dias</small>
+                </div>
+                <div class="tempo-box">
+                  <span id="horas">00</span>
+                  <small>Horas</small>
+                </div>
+                <div class="tempo-box">
+                  <span id="minutos">00</span>
+                  <small>Minutos</small>
+                </div>
+              </div>
+              <p class="mensagem-contador">Nosso amor cresce a cada segundo.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -38,43 +65,42 @@
   </div>
 
   <script>
+    // Controle do envelope
     const envelope = document.querySelector('.envelope-wrapper');
     envelope.addEventListener('click', () => {
       envelope.classList.toggle('flap');
-
-
-      
-      // Contador romântico completo
-function atualizarContador() {
-  const dataInicio = new Date("2020-09-12"); // ALTERE PARA SUA DATA!
-  const agora = new Date();
-  
-  const diff = agora - dataInicio;
-  
-  // Cálculos precisos
-  const anos = agora.getFullYear() - dataInicio.getFullYear();
-  const meses = agora.getMonth() - dataInicio.getMonth();
-  const dias = agora.getDate() - dataInicio.getDate();
-  
-  const horas = agora.getHours();
-  const minutos = agora.getMinutes();
-  
-  // Ajuste para valores negativos
-  const mesesAjustados = meses < 0 ? meses + 12 : meses;
-  const diasAjustados = dias < 0 ? new Date(agora.getFullYear(), agora.getMonth(), 0).getDate() + dias : dias;
-  
-  // Atualiza o DOM
-  document.getElementById("anos").textContent = anos.toString().padStart(2, "0");
-  document.getElementById("meses").textContent = mesesAjustados.toString().padStart(2, "0");
-  document.getElementById("dias").textContent = diasAjustados.toString().padStart(2, "0");
-  document.getElementById("horas").textContent = horas.toString().padStart(2, "0");
-  document.getElementById("minutos").textContent = minutos.toString().padStart(2, "0");
-}
-
-// Atualiza a cada minuto
-atualizarContador();
-setInterval(atualizarContador, 60000);
     });
+
+    // Contador romântico
+    function atualizarContador() {
+      const dataInicio = new Date("2020-03-29"); // ALTERE PARA SUA DATA!
+      const agora = new Date();
+      
+      const diff = agora - dataInicio;
+      
+      // Cálculos precisos
+      const anos = agora.getFullYear() - dataInicio.getFullYear();
+      const meses = agora.getMonth() - dataInicio.getMonth();
+      const dias = agora.getDate() - dataInicio.getDate();
+      
+      const horas = agora.getHours();
+      const minutos = agora.getMinutes();
+      
+      // Ajuste para valores negativos
+      const mesesAjustados = meses < 0 ? meses + 12 : meses;
+      const diasAjustados = dias < 0 ? new Date(agora.getFullYear(), agora.getMonth(), 0).getDate() + dias : dias;
+      
+      // Atualiza o DOM
+      document.getElementById("anos").textContent = anos.toString().padStart(2, "0");
+      document.getElementById("meses").textContent = mesesAjustados.toString().padStart(2, "0");
+      document.getElementById("dias").textContent = diasAjustados.toString().padStart(2, "0");
+      document.getElementById("horas").textContent = horas.toString().padStart(2, "0");
+      document.getElementById("minutos").textContent = minutos.toString().padStart(2, "0");
+    }
+
+    // Atualiza a cada minuto
+    atualizarContador();
+    setInterval(atualizarContador, 60000);
   </script>
 </body>
 </html>
