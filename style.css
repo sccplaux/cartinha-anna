@@ -148,9 +148,12 @@ body {
 }
 
 /* Contador Externo */
+/* Substitua a seção do contador externo e adicione estas regras: */
+
+/* Contador Externo */
 .contador-externo {
-  width: 100%;
-  max-width: 100px;
+  width: 90%;
+  max-width: 600px; /* Aumentei o max-width */
   margin: 30px auto;
   padding: 20px;
   background: rgba(255, 182, 193, 0.3);
@@ -172,32 +175,55 @@ body {
 .tempo-box {
   background: rgba(135, 63, 69, 0.8);
   color: white;
-  padding: 10px 15px;
+  padding: 10px 5px; /* Reduzi o padding horizontal */
   border-radius: 10px;
-  min-width: 60px;
+  min-width: 50px; /* Reduzi a largura mínima */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
+  flex: 1; /* Adicionei flex para melhor distribuição */
+  max-width: 80px; /* Limite máximo para cada caixa */
 }
 
-.tempo-box:hover {
-  transform: translateY(-5px);
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+  .contador-externo {
+    width: 95%;
+    padding: 15px 10px;
+  }
+  
+  .tempo-box {
+    padding: 8px 3px; /* Padding ainda menor */
+    min-width: 40px;
+  }
+  
+  .tempo-box span {
+    font-size: 1.2rem; /* Tamanho menor para números */
+  }
+  
+  .tempo-box small {
+    font-size: 0.7rem; /* Tamanho menor para labels */
+  }
+  
+  .mensagem-contador {
+    font-size: 0.9rem; /* Tamanho menor para a mensagem */
+  }
 }
 
-.tempo-box span {
-  font-size: 1.8rem;
-  font-weight: bold;
-  display: block;
-}
-
-.tempo-box small {
-  font-size: 0.8rem;
-  opacity: 0.9;
-}
-
-.mensagem-contador {
-  color: white;
-  font-style: italic;
-  margin-top: 10px;
+/* Para telas muito pequenas (menores que 400px) */
+@media (max-width: 400px) {
+  .relogio {
+    gap: 5px; /* Espaço menor entre os itens */
+  }
+  
+  .tempo-box {
+    min-width: 35px;
+    padding: 5px 2px;
+  }
+  
+  .tempo-box span {
+    font-size: 1rem;
+  }
+}  margin-top: 10px;
   font-size: 1.1rem;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
