@@ -30,7 +30,6 @@
             <p>
               Seu sorriso lindo, sua risada gostosa e seus olhos apaixonantes são uns dos motivos por eu te amar tanto cada dia mais. Você tem um papel tão especial na minha vida que não consigo expressar em palavras minha gratidão por ter te conhecido, e muito menos o quão agradecida eu sou por nós. Feliz dia dos namorados, eu te amo pra sempre.
             </p>
-            </div>
           </div>
         </div>
       </div>
@@ -38,14 +37,8 @@
     </div>
   </div>
 
-
-  
-      <div class="heart"></div>
-    </div>
-  </div>
-
-  <!-- CONTADOR ABAIXO DO ENVELOPE (FORA DA CARTA) -->
-  <div class="contador-romantico">
+  <!-- CONTADOR ABAIXO DO ENVELOPE -->
+  <div class="contador-externo">
     <div class="relogio">
       <div class="tempo-box">
         <span id="anos">00</span>
@@ -82,8 +75,6 @@
     function atualizarContador() {
       const dataInicio = new Date("2020-03-29"); // ALTERE PARA SUA DATA!
       const agora = new Date();
-      
-      const diff = agora - dataInicio;
       
       // Cálculos precisos
       const anos = agora.getFullYear() - dataInicio.getFullYear();
