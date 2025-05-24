@@ -21,10 +21,6 @@
     </div>
   </div>
 
-  <div class="contador">
-  <p id="tempo-juntos">12 de setembro de 2020...</p>
-</div>
-  
   <div class="container">
     <div class="envelope-wrapper">
       <div class="envelope">
@@ -42,28 +38,42 @@
   </div>
 
   <script>
-    // Contador de tempo juntos
-function atualizarContador() {
-  const dataInicio = new Date("2020-09-12"); // ⚠️ Altere para a data real!
-  const hoje = new Date();
-  
-  const diff = hoje - dataInicio; // Diferença em milissegundos
-  const anos = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
-  const meses = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
-  const dias = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
-  
-  document.getElementById("tempo-juntos").innerHTML = `
-    Juntas desde ${dataInicio.toLocaleDateString('pt-BR')}...<br>
-    <strong>${anos} anos, ${meses} meses e ${dias} dias!</strong>
-  `;
-}
-
-// Atualiza o contador ao carregar a página e a cada dia
-atualizarContador();
-setInterval(atualizarContador, 86400000); // Atualiza a cada 24h
     const envelope = document.querySelector('.envelope-wrapper');
     envelope.addEventListener('click', () => {
       envelope.classList.toggle('flap');
+
+
+      
+      // Contador romântico completo
+function atualizarContador() {
+  const dataInicio = new Date("2020-09-12"); // ALTERE PARA SUA DATA!
+  const agora = new Date();
+  
+  const diff = agora - dataInicio;
+  
+  // Cálculos precisos
+  const anos = agora.getFullYear() - dataInicio.getFullYear();
+  const meses = agora.getMonth() - dataInicio.getMonth();
+  const dias = agora.getDate() - dataInicio.getDate();
+  
+  const horas = agora.getHours();
+  const minutos = agora.getMinutes();
+  
+  // Ajuste para valores negativos
+  const mesesAjustados = meses < 0 ? meses + 12 : meses;
+  const diasAjustados = dias < 0 ? new Date(agora.getFullYear(), agora.getMonth(), 0).getDate() + dias : dias;
+  
+  // Atualiza o DOM
+  document.getElementById("anos").textContent = anos.toString().padStart(2, "0");
+  document.getElementById("meses").textContent = mesesAjustados.toString().padStart(2, "0");
+  document.getElementById("dias").textContent = diasAjustados.toString().padStart(2, "0");
+  document.getElementById("horas").textContent = horas.toString().padStart(2, "0");
+  document.getElementById("minutos").textContent = minutos.toString().padStart(2, "0");
+}
+
+// Atualiza a cada minuto
+atualizarContador();
+setInterval(atualizarContador, 60000);
     });
   </script>
 </body>
