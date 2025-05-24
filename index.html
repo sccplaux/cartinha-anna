@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Feliz Dia dos Namorados</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Player de Música (Opcional) -->
   <div class="player-container">
-    <div class="player-spotify">
-      <iframe 
-        src="https://open.spotify.com/embed/track/43BCxznTSBLcXzu4lJ8KW5?utm_source=generator" 
-        width="300" 
-        height="80" 
-        frameborder="0" 
-        allowtransparency="true" 
-        allow="encrypted-media"
-        style="border-radius: 12px; margin: 10px auto;">
-      </iframe>
-    </div>
+    <iframe 
+      src="https://open.spotify.com/embed/track/43BCxznTSBLcXzu4lJ8KW5?utm_source=generator" 
+      width="300" 
+      height="80" 
+      frameborder="0" 
+      allowtransparency="true" 
+      allow="encrypted-media"
+      style="border-radius:12px; margin:10px auto;">
+    </iframe>
   </div>
 
+  <!-- Envelope e Carta -->
   <div class="container">
     <div class="envelope-wrapper">
       <div class="envelope">
@@ -37,7 +37,7 @@
     </div>
   </div>
 
-  <!-- CONTADOR ABAIXO DO ENVELOPE -->
+  <!-- Contador de Tempo Juntos -->
   <div class="contador-externo">
     <div class="relogio">
       <div class="tempo-box">
@@ -64,23 +64,22 @@
     <p class="mensagem-contador">Nosso amor cresce a cada segundo.</p>
   </div>
 
+  <!-- JavaScript -->
   <script>
-    // Controle do envelope
+    // Controle do Envelope
     const envelope = document.querySelector('.envelope-wrapper');
     envelope.addEventListener('click', () => {
       envelope.classList.toggle('flap');
     });
 
-    // Contador romântico
+    // Contador de Tempo Juntos
     function atualizarContador() {
-      const dataInicio = new Date("2020-03-29"); // ALTERE PARA SUA DATA!
+      const dataInicio = new Date("2020-03-29"); // ⚠️ ALTERE PARA SUA DATA!
       const agora = new Date();
       
-      // Cálculos precisos
       const anos = agora.getFullYear() - dataInicio.getFullYear();
       const meses = agora.getMonth() - dataInicio.getMonth();
       const dias = agora.getDate() - dataInicio.getDate();
-      
       const horas = agora.getHours();
       const minutos = agora.getMinutes();
       
@@ -88,7 +87,7 @@
       const mesesAjustados = meses < 0 ? meses + 12 : meses;
       const diasAjustados = dias < 0 ? new Date(agora.getFullYear(), agora.getMonth(), 0).getDate() + dias : dias;
       
-      // Atualiza o DOM
+      // Atualiza o contador
       document.getElementById("anos").textContent = anos.toString().padStart(2, "0");
       document.getElementById("meses").textContent = mesesAjustados.toString().padStart(2, "0");
       document.getElementById("dias").textContent = diasAjustados.toString().padStart(2, "0");
