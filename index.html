@@ -21,6 +21,9 @@
     </div>
   </div>
 
+  <div class="contador">
+  <p id="tempo-juntos">12 de setembro de 2020...</p>
+</div>
   <div class="container">
     <div class="envelope-wrapper">
       <div class="envelope">
@@ -38,6 +41,25 @@
   </div>
 
   <script>
+    // Contador de tempo juntos
+function atualizarContador() {
+  const dataInicio = new Date("2020-09-12"); // ⚠️ Altere para a data real!
+  const hoje = new Date();
+  
+  const diff = hoje - dataInicio; // Diferença em milissegundos
+  const anos = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+  const meses = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+  const dias = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+  
+  document.getElementById("tempo-juntos").innerHTML = `
+    Juntos desde ${dataInicio.toLocaleDateString('pt-BR')}...<br>
+    <strong>${anos} anos, ${meses} meses e ${dias} dias!</strong>
+  `;
+}
+
+// Atualiza o contador ao carregar a página e a cada dia
+atualizarContador();
+setInterval(atualizarContador, 86400000); // Atualiza a cada 24h
     const envelope = document.querySelector('.envelope-wrapper');
     envelope.addEventListener('click', () => {
       envelope.classList.toggle('flap');
