@@ -152,17 +152,7 @@ body {
 }
 
 /* Estilos do contador romântico */
-.contador-romantico {
-  background: rgba(255, 182, 193, 0.2);
-  backdrop-filter: blur(5px);
-  border-radius: 20px;
-  padding: 15px;
-  margin: 20px auto 0;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  width: 90%;
-}
+
 
 .relogio {
   display: flex;
@@ -230,4 +220,14 @@ body {
   .tempo-box span {
     font-size: 1.2rem;
   }
+}
+
+.contador-romantico {
+  position: relative;
+  top: -50px; /* Ajuste esta valor conforme necessário */
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
