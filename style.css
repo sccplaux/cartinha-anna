@@ -12,7 +12,7 @@
   text-align: center;
   margin: 20px 0;
   color: #fff;
-  font-family: 'Times New Roman', serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 14px;
 }
 
@@ -135,12 +135,12 @@ body {
 .flap > .envelope > .letter {
   bottom: 100px;
   transform: translateX(-50%) scale(1.1); /* ou scale(1) para manter tamanho */
-  transition-delay: 1s;
+  transition-delay: 1.5s;
 }
 
 .flap > .heart {
   transform: rotate(90deg);
-  transition-delay: 0.4s;
+  transition-delay: 1.5s;
 }
 
 .player-spotify {
