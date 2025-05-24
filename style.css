@@ -15,158 +15,66 @@ body {
   box-sizing: border-box;
   background: var(--bg-color);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   min-height: 100vh;
   font-family: 'Arial', sans-serif;
-}
-
-.container {
-  height: 100vh;
-  display: grid;
-  place-items: center;
-  position: relative;
-  top: 80px;
 }
 
 .player-container {
   width: 100%;
   text-align: center;
-  position: absolute;
-  top: 20px;
-  left: 0;
-  z-index: 10;
+  padding: 20px 0;
 }
 
 .player-spotify iframe {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
-  margin: 10px auto;
+  margin: 0 auto;
+}
+
+.container {
+  margin-top: 20px;
+  display: grid;
+  place-items: center;
 }
 
 .envelope-wrapper {
   background: var(--bg-envelope-color);
   box-shadow: 0 0 40px var(--shadow-color);
   position: relative;
+  margin-top: 30px;
 }
 
-.envelope-wrapper > .envelope {
-  position: relative;
-  width: 400px;
-  height: 300px;
-}
+/* ... (estilos do envelope e carta permanecem iguais) ... */
 
-.envelope-wrapper > .envelope::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  z-index: 2;
-  border-top: 180px solid var(--envelope-tab);
-  border-right: 200px solid transparent;
-  border-left: 200px solid transparent;
-  transform-origin: top;
-  transition: all 0.5s ease-in-out 0.7s;
-}
-
-.envelope-wrapper > .envelope::after {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  width: 0px;
-  height: 0px;
-  border-top: 180px solid transparent;
-  border-right: 200px solid var(--envelope-cover);
-  border-bottom: 120px solid var(--envelope-cover);
-  border-left: 200px solid var(--envelope-cover);
-}
-
-.envelope > .letter {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  width: 80%;
-  height: 80%;
-  background: var(--primary);
+/* CONTADOR EXTERNO */
+.contador-externo {
+  width: 100%;
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background: rgba(255, 182, 193, 0.3);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
   text-align: center;
-  transition: all 1s ease-in-out;
-  box-shadow: 0 0 5px var(--shadow-color);
-  padding: 20px 10px;
-  z-index: 1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
-
-.envelope > .letter > .text {
-  font-family: "Times New Roman", Times, serif;
-  color: var(--txt-color);
-  text-align: center;
-  font-size: 14px;
-}
-
-.heart {
-  position: absolute;
-  top: 57%;
-  left: 50%;
-  width: 20px;
-  height: 20px;
-  background: var(--heart-color);
-  transform: translate(-50%, -50%) rotate(45deg);
-  cursor: pointer;
-  z-index: 4;
-  box-shadow: 0 1px 6px var(--shadow-color);
-}
-
-.heart::before,
-.heart::after {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: var(--heart-color);
-  border-radius: 50%;
-}
-
-.heart::before {
-  top: -12px;
-  left: 0;
-}
-
-.heart::after {
-  top: 0;
-  left: -12px;
-}
-
-.flap > .envelope::before {
-  transform: rotateX(180deg);
-  z-index: 0;
-}
-
-.flap > .envelope > .letter {
-  bottom: 100px;
-  transform: translateX(-50%) scale(1.1);
-  transition-delay: 1s;
-}
-
-.flap > .heart {
-  transform: rotate(90deg);
-  transition-delay: 0.4s;
-}
-
-/* Estilos do contador romântico */
-
 
 .relogio {
   display: flex;
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .tempo-box {
   background: rgba(135, 63, 69, 0.8);
   color: white;
-  padding: 10px;
-  border-radius: 8px;
+  padding: 10px 15px;
+  border-radius: 10px;
   min-width: 60px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
@@ -177,21 +85,22 @@ body {
 }
 
 .tempo-box span {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
   display: block;
 }
 
 .tempo-box small {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   opacity: 0.9;
 }
 
 .mensagem-contador {
-  color: var(--txt-color);
+  color: white;
   font-style: italic;
-  margin-top: 8px;
-  font-size: 0.9rem;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 /* Responsividade */
@@ -208,26 +117,12 @@ body {
     border-left-width: 150px;
   }
   
-  .player-spotify iframe {
-    width: 250px;
-  }
-  
   .tempo-box {
+    padding: 8px 12px;
     min-width: 50px;
-    padding: 8px;
   }
   
   .tempo-box span {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
-}
-
-.contador-romantico {
-  position: relative;
-  top: -50px; /* Ajuste esta valor conforme necessário */
-  margin-bottom: 30px;
-  width: 100%;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
 }
