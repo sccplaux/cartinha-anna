@@ -1,9 +1,9 @@
 :root {
   --primary: #fff;
   --bg-color: rgba(75,39,25,255);
-  --bg-envelope-color: #f2baa3;
-  --envelope-tab: #f2b0a4;
-  --envelope-cover: #f2baa3;
+  --bg-envelope-color: #875a47;
+  --envelope-tab: #c47f70;
+  --envelope-cover: #c0836e;
   --shadow-color: rgba(0, 0, 0, 0.2);
   --txt-color: #444;
   --heart-color: rgb(135,63,69);
@@ -77,15 +77,15 @@ body {
 }
 
 .envelope > .letter > .text {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Times New Roman", Times, serif;
   color: var(--txt-color);
-  text-align: left;
+  text-align: center;
   font-size: 13px;
 }
 
 .heart {
   position: absolute;
-  top: 55%;
+  top: 57%;
   left: 50%;
   width: 20px;
   height: 20px;
@@ -108,13 +108,13 @@ body {
 }
 
 .heart::before {
-  top: -10px;
+  top: -12px;
   left: 0;
 }
 
 .heart::after {
   top: 0;
-  left: 10px;
+  left: -12px;
 }
 
 .flap > .envelope::before {
